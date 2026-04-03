@@ -27,23 +27,19 @@ jobs:
       - name: Install NDK
         run: |
           echo "y" | sdkmanager "ndk;21.4.7075529"
-          echo "sdk.dir=$ANDROID_HOME" > local.properties
-          echo "ndk.dir=$ANDROID_HOME/ndk/21.4.7075529" >> local.properties
 
       - name: Init submodules
         run: |
           git submodule update --init --recursive
 
-      - name: Build native libs
+      - name: Setup local.properties
         run: |
-          cd TMessagesProj/jni
-          ./patch_boringssl.sh || true
-          ./run init action ffmpeg
-          ./run init libs libvpx
-          ./run init libs ffmpeg
-          ./run init action boringssl
-          ./run init libs boringssl
-          ./run libs native
+          echo "sdk.dir=$ANDROID_HOME" > local.properties
+          echo "ndk.dir=$ANDROID_HOME/ndk/21.4.7075529" >> local.properties
+          echo "${{ secrets.LOCAL_PROPERTIES }}" >> local.properties
+
+      - name: Grant gradlew permission
+        run: chmod +x ./gradlew
 
       - name: Gradle build
         run: |
