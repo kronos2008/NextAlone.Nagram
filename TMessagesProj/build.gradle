@@ -430,4 +430,4 @@ dependencies {
     // This is auto disabled if running against a self hosted instance of Sentry.
     // Default is enabled.
     telemetry = true
-}
+
