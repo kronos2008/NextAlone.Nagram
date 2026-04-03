@@ -397,7 +397,7 @@ dependencies {
         //
         // Only supported when using Android Gradle plugin (AGP) version 7.4.0 and above.
         excludes = []
-    }
+    
 
     // Enable auto-installation of Sentry components (sentry-android SDK and okhttp, timber and fragment integrations).
     // Default is enabled.
