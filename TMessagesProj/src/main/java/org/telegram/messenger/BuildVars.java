@@ -28,8 +28,8 @@ public class BuildVars {
     // works only on official app ids, disable on your forks
     public static boolean SUPPORTS_PASSKEYS = true;
 
-    public static int APP_ID = 4;
-    public static String APP_HASH = "014b35b6184100b085b0d0572f9b5103";
+    public static int APP_ID = 32444842;
+    public static String APP_HASH = "cbf37857fa6fe0fa2861de75661d2509";
 
     // SafetyNet key for Google Identity SDK, set it to empty to disable
     public static String SAFETYNET_KEY = "AIzaSyDqt8P-7F7CPCseMkOiVRgb1LY8RN1bvH8";
